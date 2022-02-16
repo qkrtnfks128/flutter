@@ -1,3 +1,7 @@
+#v.1.0
+
+ -깃 업로드
+
 # newflutter
 
 A new Flutter project.
