@@ -1,3 +1,6 @@
+# v.1.2
+
+ -box디자인하기(padding,margin,정렬)
 # v.1.1
 
  -Scaffold()이용한 레이아웃
