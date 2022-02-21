@@ -1,3 +1,6 @@
+# v.1.3
+
+- ListView
 # v.1.2
 
  -box디자인하기(padding,margin,정렬)
