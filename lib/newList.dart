@@ -2,7 +2,7 @@ const NEW_LIST = [
 
       {
         "name": "Burger",
-        "brand": "버거킹",
+        "brand": "뻐거킹",
         "color": "D4A85B",
         "image": "burger.png",
         "price": "2000",

@@ -1,16 +1,22 @@
+# v.1.4
+
+-   레이아웃 연습
+
 # v.1.3
 
-- ListView
+-   ListView
+
 # v.1.2
 
- - box디자인하기(padding,margin,정렬)
+-   box디자인하기(padding,margin,정렬)
+
 # v.1.1
 
- - Scaffold()이용한 레이아웃
+-   Scaffold()이용한 레이아웃
 
 # v.1.0
 
- - 깃 업로드~!
+-   깃 업로드~!
 
 # newflutter
 
@@ -22,8 +28,8 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+-   [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+-   [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
