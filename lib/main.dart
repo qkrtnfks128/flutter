@@ -30,103 +30,171 @@ class MyHomePage extends StatelessWidget {
         resizeToAvoidBottomInset: true,
         backgroundColor: Colors.amber[800],
         appBar: AppBar(
-          title: Text('My app'),
+          title: Text('Mangki app'),
           centerTitle: true,
           backgroundColor: Colors.amber[700],
           elevation: 0.0, //높이,앱바가 떠있는 효과를 없앰
+          actions:[
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed:(){
+                print('shopping_cart button is clicked');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed:(){
+                print('search button is clicked');
+              },
+            ),
+          ],
+        ),
+        drawer: Drawer(
+          child:ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                currentAccountPicture:CircleAvatar(
+                  backgroundImage:AssetImage('assets/images/dog.jpg'),
+                ),
+                accountName:Text('Mangki'),
+                accountEmail:Text('sksksk123@naver.com'),
+                onDetailsPressed: (){// arrow버튼이 생긴다. 버튼 눌렀을때 메서드
+                },
+                decoration: BoxDecoration(
+                  color: Colors.amber[600],
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)
+                  )
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/cola.png'),
+                    backgroundColor: Colors.white,
+                  ),
+                ],
+              ),
+              ListTile(
+                leading: Icon(Icons.home,
+                color:Colors.grey[850]),
+                title:Text('Home'),
+                onTap: (){
+                  print('home click');
+                },
+                trailing: Icon(Icons.add),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings,
+                    color:Colors.grey[850]),
+                title:Text('Setting'),
+                onTap: (){
+                  print('Setting click');
+                },
+                trailing: Icon(Icons.add),
+              ),
+              ListTile(
+                leading: Icon(Icons.question_answer,
+                    color:Colors.grey[850]),
+                title:Text('Q&A'),
+                onTap: (){
+                  print('Q&A click');
+                },
+                trailing: Icon(Icons.add),
+              )
+            ]
+          ),
         ),
         body: SingleChildScrollView(
           //column 요소가 화면을 넘칠때 스크롤이 되도록함
           child: Padding(
             padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/dog.jpg'),
-                      radius: 60,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/dog.jpg'),
+                    radius: 60,
                   ),
-                  Divider(
-                    height: 60,
-                    color: Colors.grey[800],
-                    thickness: 0.5,
-                    // endIndent: 30,
-                  ),
-                  Text('name',
+                ),
+                Divider(
+                  height: 60,
+                  color: Colors.grey[800],
+                  thickness: 0.5,
+                  // endIndent: 30,
+                ),
+                Text('name',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2.0,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('MangKi',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2.0,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('power-level',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2.0,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('10',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2.0,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(width: 10),
+                  Text('using lightsaber',
                       style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                      )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text('MangKi',
+                        fontSize: 16,
+                        letterSpacing: 1,
+                      ))
+                ]),
+                Row(children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(width: 10),
+                  Text('face hero tatto',
                       style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text('power-level',
+                        fontSize: 16,
+                        letterSpacing: 1,
+                      ))
+                ]),
+                Row(children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(width: 10),
+                  Text('fire flames',
                       style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                      )),
-                  SizedBox(
-                    height: 10,
+                        fontSize: 16,
+                        letterSpacing: 1,
+                      ))
+                ]),
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/burger.png'),
+                    radius: 40,
+                    backgroundColor: Colors.amber[800],
                   ),
-                  Text('10',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(children: [
-                    Icon(Icons.check_circle_outline),
-                    SizedBox(width: 10),
-                    Text('using lightsaber',
-                        style: TextStyle(
-                          fontSize: 16,
-                          letterSpacing: 1,
-                        ))
-                  ]),
-                  Row(children: [
-                    Icon(Icons.check_circle_outline),
-                    SizedBox(width: 10),
-                    Text('face hero tatto',
-                        style: TextStyle(
-                          fontSize: 16,
-                          letterSpacing: 1,
-                        ))
-                  ]),
-                  Row(children: [
-                    Icon(Icons.check_circle_outline),
-                    SizedBox(width: 10),
-                    Text('fire flames',
-                        style: TextStyle(
-                          fontSize: 16,
-                          letterSpacing: 1,
-                        ))
-                  ]),
-                  Center(
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/burger.png'),
-                      radius: 40,
-                      backgroundColor: Colors.amber[800],
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
         ));
