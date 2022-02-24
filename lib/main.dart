@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -226,7 +227,16 @@ class MySnackBar extends StatelessWidget {
         child: Text('Show me'),
         onPressed: (){
           ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content:Text('안녕안녕 나는 스낵바'))
+              SnackBar(
+                content:Text('안녕안녕 나는 스낵바',
+                textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                backgroundColor: Colors.teal,
+                duration: Duration(milliseconds: 1000),
+              )
           );
         },
       ) ,
