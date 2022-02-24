@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -133,6 +133,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 MySnackBar(//따로뺀 버튼,스낵바 만들기
                 ),
+                MyToast(),//토스트버튼
                 Divider(
                   height: 60,
                   color: Colors.grey[800],
@@ -215,6 +216,8 @@ class MyHomePage extends StatelessWidget {
         ));
   }
 }
+
+
 //따로 뺀 버튼
 class MySnackBar extends StatelessWidget {
   const MySnackBar({Key? key}) : super(key: key);
@@ -242,4 +245,38 @@ class MySnackBar extends StatelessWidget {
       ) ,
     );
   }
+}
+//토스트 버튼
+class MyToast extends StatelessWidget{
+  const MyToast({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child: TextButton(
+        onPressed: (){
+          //토스트위젯은 위젯트리와는 상관이 없다.함수만 넣어주면 된다
+          showToast();
+        },
+        child: Text('토스트버튼',
+        style: TextStyle(
+          color: Colors.white,
+          ),
+        ),
+        style: TextButton.styleFrom(//버튼 스타일
+          backgroundColor: Colors.amber,
+        ),
+      ),
+    );
+  }
+}
+//토스트 함수는 리턴값이 없으므로 void
+void showToast(){
+  Fluttertoast.showToast(
+    msg: '이거슨 토스트다!!',
+    gravity: ToastGravity.BOTTOM,//어디에 뜰 것인지 설정.
+    backgroundColor:Colors.redAccent,
+    fontSize: 20,
+    textColor: Colors.white,
+    toastLength: Toast.LENGTH_SHORT,//토스트가 뜨는 시간
+  );
 }

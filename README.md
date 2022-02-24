@@ -1,3 +1,6 @@
+# v.1.9
+
+-   fluttertoast ^8.0.8
 # v.1.8
 
 -   SnackBar style
