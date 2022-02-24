@@ -1,3 +1,6 @@
+# v.1.7
+
+-   ElevatedButton+SnackBar 따로 빼기
 # v.1.6
 
 -   SnackBar

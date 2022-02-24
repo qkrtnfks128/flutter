@@ -130,6 +130,8 @@ class MyHomePage extends StatelessWidget {
                     },
                   )
                 ),
+                MySnackBar(//따로뺀 버튼,스낵바 만들기
+                ),
                 Divider(
                   height: 60,
                   color: Colors.grey[800],
@@ -210,5 +212,24 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+//따로 뺀 버튼
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child:ElevatedButton(
+
+        child: Text('Show me'),
+        onPressed: (){
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content:Text('안녕안녕 나는 스낵바'))
+          );
+        },
+      ) ,
+    );
   }
 }
