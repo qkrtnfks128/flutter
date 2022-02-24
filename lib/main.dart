@@ -102,107 +102,114 @@ class MyHomePage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           //column 요소가 화면을 넘칠때 스크롤이 되도록함
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 30,),
                 Center(
                   child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/dog.jpg'),
                     radius: 60,
                   ),
                 ),
-                Center(
-                    child: TextButton(
-                      child: Text(
-                        'Show me',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      style: TextButton.styleFrom(//버튼 스타일
-                        backgroundColor: Colors.red,
-                      ),
-                      onPressed: () {//눌렀을 때 스낵바 나오게
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                            content: Text('Yay! A SnackBar!')
-                        )
-                      );
-                    },
-                  )
+                SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: SingleChildScrollView(
+                      scrollDirection:Axis.horizontal,
+                    child: Row(
+                      children: [
+                        MySnackBar(//따로뺀 버튼,스낵바 만들기
+                        ),
+                        SizedBox(width: 10,),
+                        MyToast(),//토스트버튼
+                        SizedBox(width: 10,),
+                        MyRoute(),//라우트버튼
+                      ],
+                    ),
+                  ),
                 ),
-                MySnackBar(//따로뺀 버튼,스낵바 만들기
-                ),
-                MyToast(),//토스트버튼
+
                 Divider(
                   height: 60,
                   color: Colors.grey[800],
                   thickness: 0.5,
-                  // endIndent: 30,
+                  indent: 30,
+                  endIndent: 30,
+
                 ),
-                Text('name',
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 2.0,
-                    )),
-                SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(left: 30,right:30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('name',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2.0,
+
+                          )),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('MangKi',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2.0,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('power-level',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2.0,
+                          )),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('10',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2.0,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(children: [
+                        Icon(Icons.check_circle_outline),
+                        SizedBox(width: 10),
+                        Text('using lightsaber',
+                            style: TextStyle(
+                              fontSize: 16,
+                              letterSpacing: 1,
+                            ))
+                      ]),
+                      Row(children: [
+                        Icon(Icons.check_circle_outline),
+                        SizedBox(width: 10),
+                        Text('face hero tatto',
+                            style: TextStyle(
+                              fontSize: 16,
+                              letterSpacing: 1,
+                            ))
+                      ]),
+                      Row(children: [
+                        Icon(Icons.check_circle_outline),
+                        SizedBox(width: 10),
+                        Text('fire flames',
+                            style: TextStyle(
+                              fontSize: 16,
+                              letterSpacing: 1,
+                            ))
+                      ]),
+                    ],
+                  ),
                 ),
-                Text('MangKi',
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 2.0,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    )),
-                SizedBox(
-                  height: 10,
-                ),
-                Text('power-level',
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 2.0,
-                    )),
-                SizedBox(
-                  height: 10,
-                ),
-                Text('10',
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 2.0,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    )),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(children: [
-                  Icon(Icons.check_circle_outline),
-                  SizedBox(width: 10),
-                  Text('using lightsaber',
-                      style: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 1,
-                      ))
-                ]),
-                Row(children: [
-                  Icon(Icons.check_circle_outline),
-                  SizedBox(width: 10),
-                  Text('face hero tatto',
-                      style: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 1,
-                      ))
-                ]),
-                Row(children: [
-                  Icon(Icons.check_circle_outline),
-                  SizedBox(width: 10),
-                  Text('fire flames',
-                      style: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 1,
-                      ))
-                ]),
                 Center(
                   child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/burger.png'),
@@ -212,7 +219,6 @@ class MyHomePage extends StatelessWidget {
                 )
               ],
             ),
-          ),
         ));
   }
 }
@@ -279,4 +285,57 @@ void showToast(){
     textColor: Colors.white,
     toastLength: Toast.LENGTH_SHORT,//토스트가 뜨는 시간
   );
+}
+//라우트버튼
+class MyRoute extends StatelessWidget{
+  const MyRoute({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child: TextButton(
+        onPressed: (){
+          Navigator.push(context,MaterialPageRoute(
+              builder:(context) => SecondPage()
+            )
+          );
+        },
+        child: Text('라우트버튼',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        style: TextButton.styleFrom(//버튼 스타일
+          backgroundColor: Colors.pinkAccent,
+        ),
+      ),
+    );
+  }
+}
+//SecondPage
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('SecondPage'),
+      ),
+      body: Center(
+        child: TextButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          child: Text('MyHomePage 가즈아',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          style: TextButton.styleFrom(//버튼 스타일
+            backgroundColor: Colors.pinkAccent,
+          ),
+        ),
+      ),
+    );
+  }
 }

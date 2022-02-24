@@ -1,3 +1,6 @@
+# v.2.0
+
+-   Navigator
 # v.1.9
 
 -   fluttertoast ^8.0.8
