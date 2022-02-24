@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -34,76 +35,69 @@ class MyHomePage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.amber[700],
           elevation: 0.0, //높이,앱바가 떠있는 효과를 없앰
-          actions:[
+          actions: [
             IconButton(
               icon: Icon(Icons.shopping_cart),
-              onPressed:(){
+              onPressed: () {
                 print('shopping_cart button is clicked');
               },
             ),
             IconButton(
               icon: Icon(Icons.search),
-              onPressed:(){
+              onPressed: () {
                 print('search button is clicked');
               },
             ),
           ],
         ),
         drawer: Drawer(
-          child:ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              UserAccountsDrawerHeader(
-                currentAccountPicture:CircleAvatar(
-                  backgroundImage:AssetImage('assets/images/dog.jpg'),
-                ),
-                accountName:Text('Mangki'),
-                accountEmail:Text('sksksk123@naver.com'),
-                onDetailsPressed: (){// arrow버튼이 생긴다. 버튼 눌렀을때 메서드
-                },
-                decoration: BoxDecoration(
+          child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dog.jpg'),
+              ),
+              accountName: Text('Mangki'),
+              accountEmail: Text('sksksk123@naver.com'),
+              onDetailsPressed: () {
+                // arrow버튼이 생긴다. 버튼 눌렀을때 메서드
+              },
+              decoration: BoxDecoration(
                   color: Colors.amber[600],
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20)
-                  )
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20))),
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/cola.png'),
+                  backgroundColor: Colors.white,
                 ),
-                otherAccountsPictures: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/cola.png'),
-                    backgroundColor: Colors.white,
-                  ),
-                ],
-              ),
-              ListTile(
-                leading: Icon(Icons.home,
-                color:Colors.grey[850]),
-                title:Text('Home'),
-                onTap: (){
-                  print('home click');
-                },
-                trailing: Icon(Icons.add),
-              ),
-              ListTile(
-                leading: Icon(Icons.settings,
-                    color:Colors.grey[850]),
-                title:Text('Setting'),
-                onTap: (){
-                  print('Setting click');
-                },
-                trailing: Icon(Icons.add),
-              ),
-              ListTile(
-                leading: Icon(Icons.question_answer,
-                    color:Colors.grey[850]),
-                title:Text('Q&A'),
-                onTap: (){
-                  print('Q&A click');
-                },
-                trailing: Icon(Icons.add),
-              )
-            ]
-          ),
+              ],
+            ),
+            ListTile(
+              leading: Icon(Icons.home, color: Colors.grey[850]),
+              title: Text('Home'),
+              onTap: () {
+                print('home click');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: Colors.grey[850]),
+              title: Text('Setting'),
+              onTap: () {
+                print('Setting click');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.question_answer, color: Colors.grey[850]),
+              title: Text('Q&A'),
+              onTap: () {
+                print('Q&A click');
+              },
+              trailing: Icon(Icons.add),
+            )
+          ]),
         ),
         body: SingleChildScrollView(
           //column 요소가 화면을 넘칠때 스크롤이 되도록함
@@ -117,6 +111,24 @@ class MyHomePage extends StatelessWidget {
                     backgroundImage: AssetImage('assets/images/dog.jpg'),
                     radius: 60,
                   ),
+                ),
+                Center(
+                    child: TextButton(
+                      child: Text(
+                        'Show me',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: TextButton.styleFrom(//버튼 스타일
+                        backgroundColor: Colors.red,
+                      ),
+                      onPressed: () {//눌렀을 때 스낵바 나오게
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: Text('Yay! A SnackBar!')
+                        )
+                      );
+                    },
+                  )
                 ),
                 Divider(
                   height: 60,
