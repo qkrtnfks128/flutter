@@ -86,35 +86,32 @@ class Screen1 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
               Center(
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/dog.jpg'),
                   radius: 60,
                 ),
               ),
-              SizedBox(height: 10,),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: SingleChildScrollView(
-                  scrollDirection:Axis.horizontal,
-                  child: Row(
-                    children: [
-                      MyRoute(),//라우트버튼
-                      SizedBox(width: 10,),
-                      MyRoute1(),
-                      SizedBox(width: 10,),
-                      MyRoute2(),
-                      SizedBox(width: 10,),
+              SizedBox(height: 10),
+              SingleChildScrollView(
+                scrollDirection:Axis.horizontal,
+                child: Row(
+                  children: [
+                    SizedBox(width: 10),
+                    MyRoute(),//라우트버튼
+                    SizedBox(width: 10),
+                    MyRoute1(),
+                    SizedBox(width: 10),
+                    MyRoute2(),
+                    SizedBox(width: 10),
 
-                      MySnackBar(//따로뺀 버튼,스낵바 만들기
-                      ),
-                      SizedBox(width: 10,),
-                      MyToast(),//토스트버튼
-                      SizedBox(width: 10,),
-
-                    ],
-                  ),
+                    MySnackBar(//따로뺀 버튼,스낵바 만들기
+                    ),
+                    SizedBox(width: 10),
+                    MyToast(),//토스트버튼
+                    SizedBox(width: 10),
+                  ],
                 ),
               ),
 
@@ -140,7 +137,7 @@ class Screen1 extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Text('MangKi',
+                    Text('MangKi 😍',
                         style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 2.0,

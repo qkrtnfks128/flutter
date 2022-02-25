@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //디버그 빨간띠 없애기
-      title: 'first app', //앱을 총칭하는 이름
+      title: '망키의 앱', //앱을 총칭하는 이름
       theme: ThemeData(primarySwatch: Colors.amber //특정색의 음영을 사용
           ),
       initialRoute:'/',
