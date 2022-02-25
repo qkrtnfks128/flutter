@@ -1,3 +1,6 @@
+# v.2.1
+
+-   initialRoute , pushNamed()
 # v.2.0
 
 -   Navigator
