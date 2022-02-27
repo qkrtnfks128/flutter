@@ -1,6 +1,6 @@
 # v.2.2
 
--   앱아이콘,이름변경
+-   앱아이콘, 이름변경
 # v.2.1
 
 -   initialRoute , pushNamed()
