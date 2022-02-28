@@ -8,7 +8,10 @@ class Screen1 extends StatefulWidget {
 }
 
 class _Screen1State extends State<Screen1> {
+  TextEditingController controller = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,11 +61,13 @@ class _Screen1State extends State<Screen1> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: controller,
                             decoration:
                                 InputDecoration(labelText: 'Enter  "dice"'),
                             keyboardType: TextInputType.emailAddress,
                           ),
                           TextField(
+                            controller: controller2,
                             decoration:
                                 InputDecoration(labelText: 'Enter  "Password"'),
                             keyboardType: TextInputType.text,
@@ -79,9 +84,45 @@ class _Screen1State extends State<Screen1> {
                                 primary: Colors.redAccent,
                                 onPrimary: Colors.white,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                if (controller.text == 'dice' &&
+                                    controller2.text == '1234') {
+
+                                  Navigator.pushNamed(context, '/dice');
+
+                                }
+                                else{
+                                  if(controller.text != 'dice' &&
+                                      controller2.text != '1234'){
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content:Text('뭐하나 제대로 쓴게없냐!'),
+                                          duration :Duration(milliseconds: 700),
+                                        )
+                                    );
+                                  }
+                                  else if(controller.text != 'dice'){
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content:Text('dice라고 써!'),
+                                          duration :Duration(milliseconds: 700),
+                                        )
+                                    );
+                                  }
+                                  else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content:Text('비밀번호 제대로 써!'),
+                                          duration :Duration(milliseconds: 700),
+                                        )
+                                    );
+                                  }
+
+
+                                }
+                              },
                               child: Icon(
-                                  Icons.arrow_forward,
+                                Icons.arrow_forward,
                               ),
                             ),
                           )
