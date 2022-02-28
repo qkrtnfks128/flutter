@@ -1,3 +1,6 @@
+# v.2.3
+
+-   Stateful widget.setState();
 # v.2.2
 
 -   앱아이콘,이름변경

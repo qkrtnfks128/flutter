@@ -137,7 +137,7 @@ class Screen1 extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Text('MangKi 😍',
+                    Text('MangKi😍',
                         style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 2.0,
