@@ -1,3 +1,6 @@
+# v.2.6
+
+-   GestureDetector로 onTap사용하기, Expended위젯사용하기, 랜덤주사위게임 만들기
 # v.2.5
 
 -   If문으로 validation기능 구현하기
