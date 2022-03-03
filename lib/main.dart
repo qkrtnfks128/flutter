@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newflutter/screen1.dart';
 import 'package:newflutter/screen2.dart';
 import 'package:newflutter/screen3.dart';
+import 'package:newflutter/login.dart';
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
           ),
       initialRoute:'/',
       routes: {
-        '/':(context) => Screen1(),
+        '/a':(context) => Screen1(),
         '/b':(context) => Screen2(),
         '/dice':(context) => Screen3(),
+        '/':(context)=> Login(),
       },
     );
   }
