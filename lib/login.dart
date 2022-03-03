@@ -20,39 +20,50 @@ class _Login extends State<Login> {
   }
 
   Widget _buildPadding() {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          MyLoginButton(
-            image: Image.asset('assets/images/google.png', width: 30),
-            text: Text('Login with Google'),
-            btnColor: Colors.white,
-            onPressed: () {},
-          ),
-          MyLoginButton(
-            image: Image.asset('assets/images/dog.jpg', width: 30),
-            text: Text('Login with dog', style: TextStyle(color: Colors.red)),
-            btnColor: Colors.white,
-            onPressed: () {},
-          ),
-          MyLoginButton(
-            image: Image.asset('assets/images/facebook.png', width: 30),
-            text: Text('Login with Facebook',
-                style: TextStyle(color: Color(0xffb3A589E))),
-            btnColor: Colors.white,
-            onPressed: () {},
-          ),
-          MyLoginButton(
-            image: Image.asset('assets/images/mail.png', width: 30),
-            text:
-                Text('Login with Email', style: TextStyle(color: Colors.white)),
-            btnColor: Color(0xffb499959),
-            onPressed: () {},
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ListView.builder(
+          padding: const EdgeInsets.all(10.0),
+          itemCount:ButtonList.length ,
+          shrinkWrap: true,
+          itemBuilder:(BuildContext context, int index){
+            return  MyLoginButton(
+              image:'${ButtonList[index]['image']}',
+              text:'${ButtonList[index]['text']}',
+              btnColor:'${ButtonList[index]['btnColor']}',
+              onPressed: () {},
+              textColor: '${ButtonList[index]['textColor']}',
+            );
+          } ,
+        ),
+      ],
     );
   }
 }
+const ButtonList = [
+  {
+    "image":"facebook.png",
+    "text":"Login with Facebook",
+    "textColor":"b3A589E",
+    "btnColor":"ffffff",
+  },
+  {
+    "image":"dog.jpg",
+    "text":"Login with Dog",
+    "textColor":"AF496F",
+    "btnColor":"ffffff",
+  },
+  {
+    "image":"google.png",
+    "text":"Login with Google",
+    "textColor":"000000",
+    "btnColor":"ffffff",
+  },
+  {
+    "image":"mail.png",
+    "text":"Login with Mail",
+    "textColor":"ffffff",
+    "btnColor":"489959",
+  },
+];
