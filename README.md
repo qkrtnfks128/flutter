@@ -1,6 +1,6 @@
 # v.2.8
 
--   ListView로 버튼만들기
+-   ListView로 버튼만들기 
 # v.2.7
 
 -   코드 리팩토링(refactoring)으로 버튼 컴포넌트화하기
