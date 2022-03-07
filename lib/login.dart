@@ -25,15 +25,18 @@ class _Login extends State<Login> {
       children: [
         ListView.builder(
           padding: const EdgeInsets.all(10.0),
-          itemCount:ButtonList.length ,
+          itemCount:buttonList.length ,
           shrinkWrap: true,
           itemBuilder:(BuildContext context, int index){
             return  MyLoginButton(
-              image:'${ButtonList[index]['image']}',
-              text:'${ButtonList[index]['text']}',
-              btnColor:'${ButtonList[index]['btnColor']}',
-              onPressed: () {},
-              textColor: '${ButtonList[index]['textColor']}',
+              image:'${buttonList[index]['image']}',
+              text:'${buttonList[index]['text']}',
+              btnColor:'${buttonList[index]['btnColor']}',
+              onPressed: () {
+                Navigator.pushNamed(context, '/info'
+                );
+              },
+              textColor: '${buttonList[index]['textColor']}',
             );
           } ,
         ),
@@ -41,7 +44,7 @@ class _Login extends State<Login> {
     );
   }
 }
-const ButtonList = [
+const buttonList = [
   {
     "image":"facebook.png",
     "text":"Login with Facebook",

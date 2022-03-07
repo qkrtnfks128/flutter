@@ -3,6 +3,7 @@ import 'package:newflutter/screen1.dart';
 import 'package:newflutter/screen2.dart';
 import 'package:newflutter/screen3.dart';
 import 'package:newflutter/login.dart';
+import 'package:newflutter/info_page.dart';
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/a':(context) => Screen1(),
         '/b':(context) => Screen2(),
         '/dice':(context) => Screen3(),
+        '/info':(context)=> InfoPage(),
         '/':(context)=> Login(),
       },
     );
